@@ -22,17 +22,17 @@ class Program
         // } while (you == "yes");
 
 
-        // for (int magic_number = 6;)
+     
         Random randomGenerator = new Random();
-        int number = randomGenerator.Next(1, 100);
+        int number = randomGenerator.Next(1, 101);
 
         int guess = 0;
 
-        while (guess != number)
+        do
         {
             Console.WriteLine("Guess a number between 1 and 100");
             guess = int.Parse(Console.ReadLine());
-        }
+        }  while (guess != number);
 
         
         if (guess == number)
