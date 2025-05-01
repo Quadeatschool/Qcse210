@@ -27,33 +27,37 @@ class Program
         int number = randomGenerator.Next(1, 101);
 
         int guess = 0;
+        int count = 0;
 
         do
         {
             Console.WriteLine("Guess a number between 1 and 100");
             guess = int.Parse(Console.ReadLine());
+            count++;
+
+            if (guess == number)
+            {
+                Console.WriteLine("guessed it!");
+            }
+            else if (guess < number)
+            {
+                Console.WriteLine("Higher");
+               
+                
+            }
+            else if (guess > number)
+            {
+                Console.WriteLine("Lower");
+                
+                
+            }
+            else 
+            {
+                Console.WriteLine("nice try poser");
+            }
         }  while (guess != number);
 
+         Console.WriteLine($"# of attempts {count}");
         
-        if (guess == number)
-        {
-            Console.WriteLine("guessed it!");
-        }
-        else if (guess < number)
-        {
-            Console.WriteLine("Higher");
-            Console.WriteLine("Guess a number");
-            
-        }
-        else if (guess > number)
-        {
-            Console.WriteLine("Lower");
-            Console.WriteLine("Guess a number");
-            
-        }
-        else 
-        {
-            Console.WriteLine("nice try poser");
-        }
     }
 }
