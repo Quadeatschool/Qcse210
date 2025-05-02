@@ -17,9 +17,8 @@ class Program
             numbers.Add(number);
         }
         
-        Console.WriteLine(numbers.Count);
 
-        Console.WriteLine("Items in number list: ");
+        Console.WriteLine($"number of items in number list: {numbers.Count} ");
         foreach (int item in numbers)
         {
              Console.WriteLine(item);
