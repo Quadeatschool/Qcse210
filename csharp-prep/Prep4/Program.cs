@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
@@ -27,12 +28,24 @@ class Program
         int max = numbers.Max();
         Console.WriteLine($"The largest number is {max}");
 
+        int min = numbers.Min();
+        Console.WriteLine($"The Smallest number is {min}");
+
+
         int sum = numbers.Sum();
         Console.WriteLine($"The numbers in the list added together is {sum}");
 
         double average = numbers.Average();
         Console.WriteLine($"The average of the numbers in the list of numbers {average}");
 
+       
+        List<int> sortedList = numbers.OrderBy(x => x).ToList();
+        
+        Console.WriteLine($"The Sorted version of the number list:");
+        foreach (int item in sortedList)
+        {
+            Console.WriteLine($"{item}");
+        }
 
     }
 }
