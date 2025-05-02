@@ -1,4 +1,6 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 
 class Program
 {
@@ -14,5 +16,14 @@ class Program
             number = int.Parse(Console.ReadLine());
             numbers.Add(number);
         }
+        
+        Console.WriteLine(numbers.Count);
+
+        Console.WriteLine("Items in number list: ");
+        foreach (int item in numbers)
+        {
+             Console.WriteLine(item);
+        }
+        
     }
 }
