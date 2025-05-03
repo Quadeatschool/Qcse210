@@ -2,8 +2,28 @@ using System;
 
 class Program
 {
-    // PromptUserNumber - Asks for and returns the user's favorite number (as an integer)
+    // DisplayResult - Accepts the user's name and the squared number and displays them.
+    static void DisplayResult(int sqrnumber, string name)
+    {
+        Console.WriteLine($"Your name is {name} and your number squared is {sqrnumber}");
+    }
 
+    // SquareNumber - Accepts an integer as a parameter and returns that number squared (as an integer)
+
+    static int SquareNumber(int number)
+    {
+        int sqrnumber = number*number;
+        return sqrnumber;
+    }
+
+    // PromptUserNumber - Asks for and returns the user's favorite number (as an integer)
+    static int PromptUserNumber()
+    {
+        Console.WriteLine("Please enter your fav number: ");
+        int favnumber = int.Parse(Console.ReadLine());
+
+        return favnumber;
+    }
 
     // PromptUserName - Asks for and returns the user's name (as a string)
     static string PromptUserName()
@@ -23,17 +43,9 @@ class Program
     {
         Console.WriteLine("Hello Prep5 World!");
 
+        DisplayWelcome(args);
 
-        Console.WriteLine($"Your name is {PromptUserName()}");
-
-       
-
-
-
-// SquareNumber - Accepts an integer as a parameter and returns that number squared (as an integer)
-// DisplayResult - Accepts the user's name and the squared number and displays them.
-
-
+        DisplayResult(SquareNumber(PromptUserNumber()), PromptUserName());
         
     }
 }
