@@ -35,7 +35,7 @@ class Program
     }
 
     // DisplayWelcome - Displays the message, "Welcome to the Program!"
-    static void DisplayWelcome(string[] args)
+    static void DisplayWelcome()
     {
         Console.WriteLine("Welcome to the Program!");
     }
@@ -43,7 +43,7 @@ class Program
     {
         Console.WriteLine("Hello Prep5 World!");
 
-        DisplayWelcome(args);
+        DisplayWelcome();
 
         DisplayResult(SquareNumber(PromptUserNumber()), PromptUserName());
         
