@@ -20,6 +20,11 @@ public class Circle
             {
                 return _radius; 
             }
+
+            public double GetArea()
+            {
+
+            }
         }
 
 
@@ -27,6 +32,8 @@ class Quade
 {
 
 }
+
+
 
 
 class Program
