@@ -1,35 +1,48 @@
 using System;
+using System.Runtime.CompilerServices;
+
+
+public class Circle 
+        {
+            private double _radius;
+            
+            public void SetRadius(double radius)
+            {
+                if(radius < 0)
+                {
+                    Console.WriteLine("Error");
+                    return;
+                }
+                _radius = radius;
+            }
+
+            public double GetRadius()
+            {
+                return _radius; 
+            }
+        }
+
+
+class Quade 
+{
+
+}
+
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Sandbox World!");
+        Console.WriteLine("Ni hou");
 
         
-        // Console.Write("Please input your first name: ");
-        // string firstName = Console.ReadLine();
-        // Console.Write( $"Your first name is: {firstName}");
-
-
-        // Console.Write("Please input your last name: ");
-        // string lastName = Console.ReadLine();
-        // Console.WriteLine( $"Your first name is: {lastName} {firstName}");
-
-        int x = 10;
-        if (x == 9);
-        {
-            Console.WriteLine("X is 10");
-        }
-
-        for(int i = 0; i < x; i++)
-        {
-        Console.WriteLine($"bob is cool : {i}");
-        }
+        Circle myCircle = new Circle();
+        myCircle.SetRadius(10);
+        Console.WriteLine();
+        Console.WriteLine($"{myCircle.GetRadius()}");
 
     }
-// xfguiopoihgvc
-//hgcvhjk
+
 }
 
 
