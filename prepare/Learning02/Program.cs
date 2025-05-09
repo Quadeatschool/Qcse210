@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks.Dataflow;
+using Microsoft.VisualBasic;
 
 class Program
 {
@@ -16,10 +17,20 @@ class Program
 
         Job job2 = new Job();
 
-        job1._jobTitle = "office slave";
-        
+        job2._jobTitle = "office slave";
+        job2._company = "Wendy's";
+        job2._startYear = 1920;
+        job2._endYear = 2001;
 
-        job1.DisplayJobInfo();
+        Resume myResume = new Resume();
+        myResume._name ="Quade Hafen";
+        
+        myResume._pastJobs.Add(job1);
+        myResume._pastJobs.Add(job2);
+
+
+        myResume.Display();
 
     }
+     
 }
