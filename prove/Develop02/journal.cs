@@ -1,7 +1,7 @@
 public class Journal
 {
-    public List<JournalEntry> entries;
-    {
-        
-    }
+    // public List<JournalEntry> entries;
+    // {
+
+    // }
 }
