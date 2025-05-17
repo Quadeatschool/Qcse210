@@ -1,30 +1,32 @@
-// public class JournalEntry
-// {
+public class JournalEntry
+{
 
-//     string _date;
-//     string _prompt;
-//     string _response;
+    string _date;
+    string _prompt;
+    string _response;
 
-//     public void JournalEntry()
-//     {
+    public void Entry(string date, string prompt, string response)
+    {
 
-//     }
-//     public void Display()
-//     {
+    }
 
-//     }
+    public void Entry() {}
+    public void Display()
+    {
+        Console.WriteLine($"{_date}, {_prompt}, {_response}");
+    }
 
-//     public void EntryToSting()
-//     {
+    public void EntryToSting()
+    {
 
-//     }
-//     public void CreateEntryWithPrompt()
-//     {
+    }
+    public void CreateEntryWithPrompt(string prompt)
+    {
 
-//     }
+    }
 
-//     public void CreateEntryWithData()
-//     {
+    public void CreateEntryWithData(string date, string prompt, string response)
+    {
 
-//     }
-// }
+    }
+}
