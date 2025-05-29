@@ -1,13 +1,15 @@
 public class JournalEntry
 {
 
-    string _date;
-    string _prompt;
-    string _response;
+    public DateTime _date { get; private set; }
+    private string _prompt { get; set; }
+    string _response { get; set; }
 
-    public void Entry(string date, string prompt, string response)
+    public void Entry(string prompt, string response)
     {
-
+        _date = DateTime.Now;
+        _prompt = prompt;
+        _response = response;
     }
 
     public void Entry() {}
