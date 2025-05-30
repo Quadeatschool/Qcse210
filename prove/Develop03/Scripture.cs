@@ -1,24 +1,32 @@
-public class Scripture
-{
-    private string _textString;
+// public class Scripture
+// {
+//     private string _textString;
+//     private Reference _reference;
 
-    // Scripture Methods
+//     private Word _wordList;
 
-    private string DisplayScripture()
-    {
+//     // Scripture Methods
 
-    }
+//     public void DisplayScripture()
+//     {
+//         Console.WriteLine($"{_textString}");
+//     }
 
-    private void ClearScreen()
-    {
-        // This will start by displaying "AAA" and waiting for the user to press the enter key
-Console.WriteLine("AAA");
-Console.ReadLine();
+//     public void ClearScreen()
+//     {
+//         // This will start by displaying "AAA" and waiting for the user to press the enter key
+//         Console.WriteLine("AAA");
+//         Console.ReadLine();
 
-// This will clear the console
-Console.Clear();
+//         // This will clear the console
+//         Console.Clear();
 
-// This will show "BBB" in the console where "AAA" used to be
-Console.WriteLine("BBB");
-    }
-}
+//         // This will show "BBB" in the console where "AAA" used to be
+//         Console.WriteLine("BBB");
+//     }
+
+//     public string HideWords()
+//     {
+
+//     }
+// }

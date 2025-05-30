@@ -1,13 +1,18 @@
 public class Reference
 {
-    private string _chapter;
-    private string _verse;
+    private int _chapter;
+    private int _verse;
     private string _book;
 
     // Reference methods
-
-    private void DisplayReference()
+    public Reference(string book,  int chapter, int verse)
     {
-
+        _book = book;
+        _verse = verse;
+        _chapter = chapter;
+    }
+    public void DisplayReference()
+    {
+        Console.WriteLine($"{_book} {_chapter}:{_verse}");
     }
 }
