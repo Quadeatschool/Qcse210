@@ -15,12 +15,16 @@ class Program
         // Scripture scriptureReferenceFour = new Scripture("");
 
 
-
+        // test references
         Reference referenceExample = new Reference("mormon", 5, 23);
 
         referenceExample.DisplayReference();
-        
 
+        // test word
+        Word wordExample = new Word("pickles");
+
+        wordExample.GetWord();
+        Console.WriteLine(wordExample.GetWord());
 
 
     }

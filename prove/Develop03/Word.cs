@@ -1,24 +1,32 @@
-// public class Word
-// {
-//     private string wordText { get; set; }
-//     private bool _hiddenWord { get; set; } = false;
+public class Word
+{
+    private string _wordText;
+    private bool _hiddenWord;
 
-//     public void CheckFor_()
-//     {
+    public Word(string text)
+    {
+        _wordText = text;
+        _hiddenWord = false;
+    }
+    public void HideWord()
+    {
+         _hiddenWord = true;
+    }
 
-//     }
-//     public string HideWord()
-//     {
+    public void RevealWord()
+    {
+        _hiddenWord = false;
+    }
 
-//     }
-//     public string GetWord()
-//     {
+    public string GetWord()
+    {
+        //short hand way to make an if else 
+        return _hiddenWord ? new string('_', _wordText.Length) : _wordText;
+    }
 
-//     }
+    public bool IsHidden()
+    {
+        return _hiddenWord;
+    }
 
-//     public string IsHidden()
-//     {
-
-//     }
-
-// }
+}
