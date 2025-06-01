@@ -11,8 +11,8 @@ public class Reference
         _verse = verse;
         _chapter = chapter;
     }
-    public void DisplayReference()
+    public string DisplayReference()
     {
-        Console.WriteLine($"{_book} {_chapter}:{_verse}");
+        return $"{_book} {_chapter}:{_verse}";
     }
 }
