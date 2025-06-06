@@ -7,7 +7,7 @@ public class Scripture
 
     // Scripture Methods
 
-    public Scripture(List<Word> wordList, Reference reference, string textString)
+    public Scripture(Reference reference, string textString)
     {
         _textString = textString;
         _reference = reference;
@@ -15,7 +15,7 @@ public class Scripture
 
         foreach (string word in textString.Split(' '))
         {
-            wordList.Add(new Word(word));
+            _wordList.Add(new Word(word));
         }
 
     }
@@ -32,23 +32,26 @@ public class Scripture
 
     public void ClearScreen()
     {
-        // This will start by displaying "AAA" and waiting for the user to press the enter key
-        Console.WriteLine("AAA");
-        Console.ReadLine();
-
-        // This will clear the console
-        Console.Clear();
-
-        // This will show "BBB" in the console where "AAA" used to be
-        Console.WriteLine("BBB");
+        //This while loop will read true if the spacebar is hit.
+        while (Console.ReadKey(true).Key != ConsoleKey.Spacebar)
+            // This will clear the console
+            Console.Clear();
     }
 
-    public void HideWords(count =1)
+    public void HideWords(int tally = 1)
     // permanant paramater
     {
         Random rando = new Random();
         var unhiddenWords = _wordList.Where(w => !w.IsHidden()).ToList();
-        int hidcount = 0;
+        int toHide = Math.Min(tally, unhiddenWords.Count);
+
+        for (int item = 0; item < toHide; item++)
+        {
+            int index = rando.Next(unhiddenWords.Count);
+            unhiddenWords[index].HideWord();
+            unhiddenWords.RemoveAt(index);
+
+        }
 
 
     }
