@@ -6,10 +6,10 @@ class Program
     static void Main(string[] args)
     {
        
+
         // test references
-        Reference referenceExample = new Reference("mormon", 5, 23);
         Reference referenceOne = new Reference("2 Nephi", 2, 25);
-        referenceExample.DisplayReference();
+     
 
         // test word
         Word wordExample = new Word("pickles");
