@@ -21,6 +21,7 @@ public class Scripture
     }
     public void DisplayScripture()
     {
+        Console.Clear();
         Console.WriteLine(_reference.DisplayReference());
 
         foreach (Word word in _wordList)
@@ -52,7 +53,10 @@ public class Scripture
             unhiddenWords.RemoveAt(index);
 
         }
-
-
+    }
+    public bool AllWordsHidden()
+    {
+        return _wordList.All(w => w.IsHidden());
     }
 }
+

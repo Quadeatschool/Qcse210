@@ -5,11 +5,11 @@ class Program
 {
     static void Main(string[] args)
     {
-       
+
 
         // test references
         Reference referenceOne = new Reference("2 Nephi", 2, 25);
-     
+
 
         // test word
         Word wordExample = new Word("pickles");
@@ -25,6 +25,31 @@ class Program
         // Scripture scriptureThree = new Scripture("");
         // Scripture scriptureFour = new Scripture("");
 
-        scriptureOne.DisplayScripture();
+
+        while (true)
+        {
+            scriptureOne.DisplayScripture();
+
+            // if (scriptureOne.AllWordsHidden())
+            // {
+            //     
+            //     Console.ReadLine();
+            //     break;
+            // }
+            Console.WriteLine("Hidden Complete. Press q to exit");
+            Console.WriteLine("Press Enter to hide more words");
+            string input = Console.ReadLine();
+            if (input.Trim().ToLower() == "q")
+            {
+                break;
+            }
+
+
+
+            scriptureOne.HideWords();
+        }
+        
+
+
     }
 }

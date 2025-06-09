@@ -19,14 +19,14 @@ public class Menu
         }
     }
 
-    public string MoveThroughProgram(string input)
-    {
-        // kicks out at q
-        // starts program at space bar
-        if (input === 'q') ;
-        return 
+    // public string MoveThroughProgram(string input)
+    // {
+    //     // kicks out at q
+    //     // starts program at space bar
+    //     if (input === 'q') ;
+    //     return 
         
 
-    }
+    // }
 }
 
