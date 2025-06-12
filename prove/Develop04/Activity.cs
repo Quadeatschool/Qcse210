@@ -72,7 +72,7 @@ public class Activity
 
    public DateTime Timer(DateTime endtime, int duration)
 {
-    
+    return DateTime.Now;
    }
 
     public bool TimerEnded()
