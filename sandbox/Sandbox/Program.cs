@@ -3,13 +3,6 @@ using System.Runtime.CompilerServices;
 
 
 
-class Quade 
-{
-
-}
-
-
-
 
 class Program
 {
