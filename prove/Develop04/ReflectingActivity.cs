@@ -7,13 +7,14 @@ public class ReflectingAactivity : Activity
 
     //--------------------------
 
-    public ReflectingAactivity()
+    public ReflectingAactivity(int time)
+     : base(time, "", "", "", DateTime.Now)
     {
 
     }
 
-    public string GetPrompt()
-    { 
-        
+    public string GetPrompt(string prompt)
+    {
+        return prompt;
     }
 }
