@@ -7,9 +7,17 @@ public class ReflectingAactivity : Activity
 
     //--------------------------
 
-    public ReflectingAactivity(int time)
-     : base(time, "", "", "", DateTime.Now)
+    public ReflectingAactivity(int duration,
+        string startingMessage,
+        string endingMessage,
+        string description,
+        DateTime endTime,
+        string prompt,
+        string questions)
+     : base(duration, startingMessage, endingMessage, description, endTime)
     {
+        string _prompt = prompt;
+        string _questions = questions;
 
     }
 

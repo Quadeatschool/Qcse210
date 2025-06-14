@@ -4,13 +4,18 @@ public class ListingActivity : Activity
 
     //-------------------------------
 
-    public ListingActivity()
+    public ListingActivity(int duration,
+        string startingMessage,
+        string endingMessage,
+        string description,
+        DateTime endTime,
+        List<string> listItems) : base(duration, startingMessage, endingMessage, description, endTime)
     {
-
+        List<string> _listItems = listItems;
     }
 
-    public string DistplayList()
+    public void DistplayList()
     {
-
+        Console.WriteLine($"{_listItems}");
     }
 } 
