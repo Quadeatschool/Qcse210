@@ -22,68 +22,88 @@ public class Activity
     {
         int sleepTime = 250;
 
-                DateTime currentTime = DateTime.Now;
-                DateTime endTime = currentTime.AddSeconds(20);
-
-               
-
-                string animationString = "-\\/|\\/";
-                int index = 0;
-                while (DateTime.Now < endTime)
-                {
-                    Console.Write(animationString[index++ % animationString.Length]);
-                    // % in this case keeps the loop going 0-4
-                    Thread.Sleep(sleepTime);
-                    Console.Write("\b");
-
-                    // if two digit time then add an if with another \b
-                }
-
-                int time = 9;
-                int count = time;
-
-                while (DateTime.Now < endTime)
-                {
-                    Console.Write(count--);
-                    Thread.Sleep(1000);
-                    Console.Write("\b");
-
-                    // if two digit time then add an if with another \b
-                }
+        DateTime currentTime = DateTime.Now;
+        DateTime endTime = currentTime.AddSeconds(20);
 
 
-                while (DateTime.Now < endTime)
-                {
 
-                    Console.Write(animationString[0..5]);
-                    Thread.Sleep(500);
-                    Console.WriteLine(" . ");
-                    Console.Write("+");
-                    Thread.Sleep(sleepTime);
-                    Console.Write("\b");
-                    Console.Write(animationString);
-                    Console.Write("-");
-                    Thread.Sleep(sleepTime);
-                    Console.Write("\b");
-                }
-            }
+        string animationString = "-\\/|\\/";
+        int index = 0;
+        while (DateTime.Now < endTime)
+        {
+            Console.Write(animationString[index++ % animationString.Length]);
+            // % in this case keeps the loop going 0-4
+            Thread.Sleep(sleepTime);
+            Console.Write("\b");
 
+            // if two digit time then add an if with another \b
+        }
+
+        int time = 9;
+        int count = time;
+
+        while (DateTime.Now < endTime)
+        {
+            Console.Write(count--);
+            Thread.Sleep(1000);
+            Console.Write("\b");
+
+            // if two digit time then add an if with another \b
+        }
+
+
+        while (DateTime.Now < endTime)
+        {
+
+            Console.Write(animationString[0..5]);
+            Thread.Sleep(500);
+            Console.WriteLine(" . ");
+            Console.Write("+");
+            Thread.Sleep(sleepTime);
+            Console.Write("\b");
+            Console.Write(animationString);
+            Console.Write("-");
+            Thread.Sleep(sleepTime);
+            Console.Write("\b");
+        }
     }
 
-   public DateTime Timer(DateTime endtime, int duration)
-{
-    return DateTime.Now;
-   }
+    public DateTime Timer(DateTime endtime, int duration)
+    {
+        return DateTime.Now;
+    }
 
+// if time left is greater then zero then count down
+    public void Tick()
+    {
+        if (_duration >= 0)
+        {
+            _duration--; 
+        }
+           
+    }
+
+
+// returns false if duration hits zero
     public bool TimerEnded()
-{
-    // While(_duration = 0)
-    return false;
+    {
+        return _duration <= 0;
+    }
+
+    public int StartTime()
+    {
+        return _duration;
+    }
+
+
+
+
 }
 
-    public void StartTime()
-{
+   
 
-}
-}
+ 
+
+   
+
 
