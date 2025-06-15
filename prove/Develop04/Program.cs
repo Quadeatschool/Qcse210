@@ -4,14 +4,26 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
-
-        Console.WriteLine("1. 2. 3.");
-
-
+        
         Menu menu = new Menu();
         menu.DisplayTitle();
         menu.ProcessMenu();
+
+        BreathingActivity tryBreathingActivity = new BreathingActivity(2, "Start", "End", "desc", DateTime.Now, "instructions"
+);
+
+        // Activity activity = new Activity
+
+        
+
+        Console.WriteLine(tryBreathingActivity.Instruct());
+        tryBreathingActivity.SetDuration();
+
+        tryBreathingActivity.Spinner();
+        tryBreathingActivity.StartTime();
+
+        tryBreathingActivity.Tick();
+        tryBreathingActivity.TimerEnded();
 
     }
 }

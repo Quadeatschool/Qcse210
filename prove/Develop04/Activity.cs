@@ -73,18 +73,18 @@ public class Activity
         return DateTime.Now;
     }
 
-// if time left is greater then zero then count down
+    // if time left is greater then zero then count down
     public void Tick()
     {
         if (_duration >= 0)
         {
-            _duration--; 
+            _duration--;
         }
-           
+
     }
 
 
-// returns false if duration hits zero
+    // returns false if duration hits zero
     public bool TimerEnded()
     {
         return _duration <= 0;
@@ -96,7 +96,21 @@ public class Activity
     }
 
 
+    public void SetDuration()
+    {
+        Console.WriteLine("How long in secounds would you like your activity to last?");
+        _duration = int.Parse(Console.ReadLine());
 
+    //     Console.WriteLine("How long in seconds would you like your activity to last?");
+    // string input = Console.ReadLine();
+    // int duration;
+    // while (!int.TryParse(input, out duration) || duration <= 0)
+    // {
+    //     Console.WriteLine("Please enter a valid positive number for duration:");
+    //     input = Console.ReadLine();
+    // }
+    // _duration = duration;
+    }
 
 }
 

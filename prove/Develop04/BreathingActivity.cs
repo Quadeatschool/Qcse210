@@ -10,12 +10,12 @@ class BreathingActivity : Activity
         string instructions
     ) : base(duration, startingMessage, endingMessage, description, endTime)
     {
-       string _instructions = instructions;
+       _instructions = instructions;
     }
 
-    public string Instruct(string instructions)
+    public string Instruct()
     {
-        return instructions; 
+        return _instructions; 
     }
 
     
