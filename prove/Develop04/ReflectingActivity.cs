@@ -21,8 +21,14 @@ public class ReflectingAactivity : Activity
 
     }
 
-    public string GetPrompt(string prompt)
+    public string GetPrompt()
     {
-        return prompt;
+        return _prompt;
     }
+
+    public string GetQuestion()
+    {
+        return _questions;
+    }
+
 }
