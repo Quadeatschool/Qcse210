@@ -18,55 +18,7 @@ public class Activity
 
 
     }
-    public void Spinner()
-    {
-        int sleepTime = 250;
 
-        DateTime currentTime = DateTime.Now;
-        DateTime endTime = currentTime.AddSeconds(20);
-
-
-
-        string animationString = "-\\/|\\/";
-        int index = 0;
-        while (DateTime.Now < endTime)
-        {
-            Console.Write(animationString[index++ % animationString.Length]);
-            // % in this case keeps the loop going 0-4
-            Thread.Sleep(sleepTime);
-            Console.Write("\b");
-
-            // if two digit time then add an if with another \b
-        }
-
-        int time = 9;
-        int count = time;
-
-        while (DateTime.Now < endTime)
-        {
-            Console.Write(count--);
-            Thread.Sleep(1000);
-            Console.Write("\b");
-
-            // if two digit time then add an if with another \b
-        }
-
-
-        while (DateTime.Now < endTime)
-        {
-
-            Console.Write(animationString[0..5]);
-            Thread.Sleep(500);
-            Console.WriteLine(" . ");
-            Console.Write("+");
-            Thread.Sleep(sleepTime);
-            Console.Write("\b");
-            Console.Write(animationString);
-            Console.Write("-");
-            Thread.Sleep(sleepTime);
-            Console.Write("\b");
-        }
-    }
 
     public DateTime Timer(DateTime endtime, int duration)
     {
@@ -101,17 +53,41 @@ public class Activity
         Console.WriteLine("How long in secounds would you like your activity to last?");
         _duration = int.Parse(Console.ReadLine());
 
-    //     Console.WriteLine("How long in seconds would you like your activity to last?");
-    // string input = Console.ReadLine();
-    // int duration;
-    // while (!int.TryParse(input, out duration) || duration <= 0)
-    // {
-    //     Console.WriteLine("Please enter a valid positive number for duration:");
-    //     input = Console.ReadLine();
-    // }
-    // _duration = duration;
+        //     Console.WriteLine("How long in seconds would you like your activity to last?");
+        // string input = Console.ReadLine();
+        // int duration;
+        // while (!int.TryParse(input, out duration) || duration <= 0)
+        // {
+        //     Console.WriteLine("Please enter a valid positive number for duration:");
+        //     input = Console.ReadLine();
+        // }
+        // _duration = duration;
     }
 
+    public void Spinner()
+    {
+        int sleepTime = 250;
+
+        DateTime currentTime = DateTime.Now;
+        DateTime endTime = currentTime.AddSeconds(_duration);
+
+
+
+        string animationString = "\\/|\\/";
+        int index = 0;
+        while (DateTime.Now < endTime)
+        {
+            Console.Write(animationString[index++ % animationString.Length]);
+            // % in this case keeps the loop going 0-4
+            Thread.Sleep(sleepTime);
+            Console.Write("\b");
+
+            // if two digit time then add an if with another \b
+        }
+
+
+        
+    }
 }
 
    

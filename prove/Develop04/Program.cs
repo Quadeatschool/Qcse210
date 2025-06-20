@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic; // <-- don't forget this
+using System.Collections.Generic; 
 
 class Program
 {
