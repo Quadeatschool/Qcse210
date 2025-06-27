@@ -10,13 +10,25 @@ class BreathingActivity : Activity
         string instructions
     ) : base(duration, startingMessage, endingMessage, description, endTime)
     {
-       _instructions = instructions;
+        _instructions = instructions;
     }
 
     public string Instruct()
     {
-        return _instructions; 
+        return _instructions;
     }
 
+    public override void Run()
+    {
+         Console.WriteLine(Instruct());
+      SetDuration();
+
+        Spinner();
+        StartTime();
+        Tick();
+        TimerEnded();
+        Instruct();
+    }
     
+
 }

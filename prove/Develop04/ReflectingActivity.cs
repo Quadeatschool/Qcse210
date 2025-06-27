@@ -1,6 +1,6 @@
 using System.Dynamic;
 
-public class ReflectingAactivity : Activity
+class ReflectingAactivity : Activity
 {
     private string _prompt;
     private string _questions;
@@ -29,6 +29,20 @@ public class ReflectingAactivity : Activity
     public string GetQuestion()
     {
         return _questions;
+    }
+
+    public override void Run()
+    {
+
+        
+        SetDuration();
+        Spinner();
+        StartTime();
+        Tick();
+        
+        GetPrompt();
+        GetQuestion();
+
     }
 
 }

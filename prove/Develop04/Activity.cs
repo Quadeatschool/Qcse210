@@ -1,4 +1,6 @@
-public class Activity
+using System.Runtime;
+
+abstract class Activity
 {
     private int _duration;
     private string _startingMessage;
@@ -71,8 +73,6 @@ public class Activity
         DateTime currentTime = DateTime.Now;
         DateTime endTime = currentTime.AddSeconds(_duration);
 
-
-
         string animationString = "\\/|\\/";
         int index = 0;
         while (DateTime.Now < endTime)
@@ -85,10 +85,13 @@ public class Activity
             // if two digit time then add an if with another \b
         }
 
-
-        
     }
+
+    abstract public void Run();
+   
+
 }
+
 
    
 

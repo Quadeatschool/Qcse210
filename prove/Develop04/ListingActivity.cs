@@ -1,4 +1,4 @@
-public class ListingActivity : Activity
+ class ListingActivity : Activity
 {
     private List<string> _listItems;
 
@@ -17,5 +17,16 @@ public class ListingActivity : Activity
     public void DistplayList()
     {
         Console.WriteLine($"{_listItems}");
+    }
+
+
+    public override void Run()
+    {
+        SetDuration();
+        Spinner();
+        StartTime();
+        Tick();
+        DistplayList();
+
     }
 } 

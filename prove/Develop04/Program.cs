@@ -1,14 +1,10 @@
 using System;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
-
-        Menu menu = new Menu();
-        menu.DisplayTitle();
-        menu.ProcessMenu();
 
         BreathingActivity tryBreathingActivity = new BreathingActivity(2, "Start", "End", "desc", DateTime.Now, "instructions"
 );
@@ -16,30 +12,13 @@ class Program
         // Activity activity = new Activity
 
 
-
-        Console.WriteLine(tryBreathingActivity.Instruct());
-        tryBreathingActivity.SetDuration();
-
-        tryBreathingActivity.Spinner();
-        tryBreathingActivity.StartTime();
-        tryBreathingActivity.Tick();
-        tryBreathingActivity.TimerEnded();
-        tryBreathingActivity.Instruct();
+        
 
         //-----------------------------------------
 
         ReflectingAactivity tryReflectingAactivity = new ReflectingAactivity(2, "Start", "End", "desc", DateTime.Now, "prompt", "intructions");
 
-
-        tryReflectingAactivity.SetDuration();
-        tryReflectingAactivity.Spinner();
-        tryReflectingAactivity.StartTime();
-        tryReflectingAactivity.Tick();
-        tryReflectingAactivity.TimerEnded();
-
-        tryReflectingAactivity.GetPrompt();
-        tryReflectingAactivity.GetQuestion();
-
+       
         //------------------------------------------
 
         // Create a list of strings
@@ -52,23 +31,47 @@ class Program
 
         // Pass the list to your ListingActivity constructor
         ListingActivity tryListingActivity = new ListingActivity(
-            2, 
-            "Start", 
-            "End", 
-            "desc", 
-            DateTime.Now, 
+            2,
+            "Start",
+            "End",
+            "desc",
+            DateTime.Now,
             sampleList // <-- pass your list here
         );
 
-        tryListingActivity.SetDuration();
-        tryListingActivity.Spinner();
-        tryListingActivity.StartTime();
-        tryListingActivity.Tick();
-        tryListingActivity.TimerEnded();
-
-        tryListingActivity.DistplayList();
+       
 
 
 
+    
+
+    Menu menu = new Menu();
+    menu.DisplayTitle();
+        
+
+        int choice = 0;
+        while (choice != 4)
+        {
+           choice = menu.ProcessMenu();
+            switch (choice)
+            {
+                case 1:
+                    Console.WriteLine("1. Breathing\n ");
+                    tryBreathingActivity.Run();
+                    break;
+                case 2:
+                    Console.WriteLine("2. Listing\n");
+                    tryListingActivity.Run();
+                    break;
+                case 3:
+                    Console.WriteLine("3. Reflecting\n");
+                    tryReflectingAactivity.Run();
+                    break;
+                case 4:
+                    Console.WriteLine("4. Quit\n");
+                    break;
+            }
+        }
     }
+       
 }
