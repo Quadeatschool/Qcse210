@@ -22,10 +22,8 @@ class Program
 
         tryBreathingActivity.Spinner();
         tryBreathingActivity.StartTime();
-
         tryBreathingActivity.Tick();
         tryBreathingActivity.TimerEnded();
-
         tryBreathingActivity.Instruct();
 
         //-----------------------------------------
