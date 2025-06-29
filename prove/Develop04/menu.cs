@@ -14,8 +14,13 @@ public class Menu
 
     public int ProcessMenu()
     {
-        Console.WriteLine("Welcome to quality time with yourself. Enter a number to pick a mindfulness activity.\n1. Breathing\n 2. Listing\n 3. Reflecting\n 5. Quit\n");
+        Console.WriteLine("Welcome to quality time with yourself. Enter a number to pick a mindfulness activity:");
+        Console.WriteLine("1. Breathing");
+        Console.WriteLine("2. Listing");
+        Console.WriteLine("3. Reflecting");
+        Console.WriteLine("4. Quit");
        
+
         Console.WriteLine("Which would you like to pick: ");
         string _menuItem = Console.ReadLine();
        

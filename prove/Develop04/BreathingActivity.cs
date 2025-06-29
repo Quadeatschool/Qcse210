@@ -20,8 +20,8 @@ class BreathingActivity : Activity
 
     public override void Run()
     {
-         Console.WriteLine(Instruct());
-      SetDuration();
+        Console.WriteLine(Instruct());
+        SetDuration();
 
         Spinner();
         StartTime();
@@ -29,6 +29,11 @@ class BreathingActivity : Activity
         TimerEnded();
         Instruct();
     }
-    
+
+
+    public void timerExpired()
+    {
+        while (duration = 0);
+    }
 
 }
