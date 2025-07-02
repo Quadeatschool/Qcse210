@@ -9,6 +9,7 @@ class EternalGoal : Goal
     public EternalGoal(string name, string description, int points, bool status, int completions) : base(name, description, points, status)
     {
         _numberOfCompletions = completions;
+        _goalType = "Eternal";
     }
 
     public EternalGoal()
@@ -16,10 +17,7 @@ class EternalGoal : Goal
     
    }
 
-    public override void RunGoal()
-    {
-
-    }
+  
 
     public override string GetGoalType()
     {
@@ -43,5 +41,10 @@ class EternalGoal : Goal
         return "";
     }
 
-
+    public override void RunGoal()
+    {
+        Setname();
+        SetDescription();
+        SetPoints();
+    }
 }

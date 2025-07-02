@@ -4,14 +4,57 @@ using System.Runtime.CompilerServices;
 // using System.Runtime.CompilerServices;
 using System.Threading;
 class Program
+
+// 1/10
 {
     static void Main(string[] args)
     {
+
+        SimpleGoal simpleGoal = new SimpleGoal("Read Book", "Read 10 pages", 10, false);
+        CheckListGoal  listGoal = new CheckListGoal ("", "", 1, true, 0, 0, 0); 
+        EternalGoal foreverGoal = new EternalGoal("Exercise", "Run daily", 5, false, 0);
+
         Menu GoalMenu = new Menu();
-        GoalMenu.displayMenu();
 
+        int choice = 0;
+        while (choice != 6)
+        {
+            choice = GoalMenu.displayMenu();
+            switch (choice)
+            {
+                case 1:
+                    GoalMenu.CreateGoalMenu();
+                    break;
+                // Add other cases as needed
+                case 2:
+                    break;
+                case 3:
+                    // Add logic for case 3
+                    break;
+                case 4:
+                    // Add logic for case 4 
+                    break;
+                case 5:
+                    // Add logic for case 5
+                    break;
+
+            }
+            
+            switch (choice)
+            {
+                case 1:
+                    simpleGoal.RunGoal();
+                    break;
+                case 2:
+                    foreverGoal.RunGoal();
+                    break;
+                case 3:
+                    listGoal.RunGoal(); 
+                    break;
+
+            }
         
-
+        }
         // Console.WriteLine("Hello Develop05 World!");
 
         // int sleepTime = 250;

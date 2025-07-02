@@ -8,7 +8,7 @@ abstract public class Goal
     private string _description;
     private int _numberOfPoints;
     private bool _status;
-    private string _goalType;
+    protected string _goalType;
 
     //Methods------------------
 
@@ -22,6 +22,7 @@ abstract public class Goal
 
     public Goal() { }
 
+// Properties------------------
     public string GetName()
     {
         return _name; //I have it a random string return
@@ -31,9 +32,11 @@ abstract public class Goal
 
     public void Setname()
     {
-
+        Console.Write("Enter the name of the goal: ");
+        _name = Console.ReadLine();
     }
 
+//------------------
     public string GetDescription()
     {
         return _description;
@@ -42,19 +45,30 @@ abstract public class Goal
 
     public void SetDescription()
     {
-
+        Console.Write("Enter a description of the goal: ");
+        _description = Console.ReadLine();
     }
 
+//------------------
     public int GetPoints()
     {
         return _numberOfPoints;
     }
 
-    public int SetPoints()
+    public void SetPoints()
     {
-        return _numberOfPoints;
+        Console.Write("Enter the number of points for the goal: ");
+        string input = Console.ReadLine();
+        int points;
+        while (!int.TryParse(input, out points) || points < 0)
+        {
+            Console.Write("Please enter a valid positive number: ");
+            input = Console.ReadLine();
+        }
+        _numberOfPoints = points;
     }
 
+//------------------
     public bool GetStatus()
     {
         return true;
@@ -67,7 +81,7 @@ abstract public class Goal
 
     virtual public string GetGoal()
     {
-        return "";
+        return _goalType;
     }
 
     virtual public string ListGoal()
