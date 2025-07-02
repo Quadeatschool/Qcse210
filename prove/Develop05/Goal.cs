@@ -1,6 +1,6 @@
 using System.Globalization;
 
-abstract class Goal
+abstract public class Goal
 {
 
     //Data
@@ -12,12 +12,15 @@ abstract class Goal
 
     //Methods------------------
 
-    Goal(string name, string description, int points, bool status)
+    protected Goal(string name, string description, int points, bool status)
     {
-
+        _name = name;
+        _description = description;
+        _numberOfPoints = points;
+        _status = status;
     }
 
-    Goal() { }
+    public Goal() { }
 
     public string GetName()
     {
@@ -62,15 +65,29 @@ abstract class Goal
         return 1;
     }
 
-    // virtual public string GetGoal();
+    virtual public string GetGoal()
+    {
+        return "";
+    }
 
-    // virtual public string ListGoal();
+    virtual public string ListGoal()
+    {
+        return "";
+    }
 
     public override string ToString()
     {
         return "";
     }
-    
+
+    virtual public string GetGoalType()
+    {
+        return "";
+    }
+
+    abstract public int RecordEvent();
+
+    abstract public void RunGoal();
 
 
 

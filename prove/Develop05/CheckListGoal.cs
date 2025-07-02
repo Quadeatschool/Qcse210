@@ -9,17 +9,47 @@ class CheckListGoal : Goal
 
     //-----------------------------------
 
-    public CheckListGoal(string name, string description, int points, bool status, int completions, int max, int bonus)
+    public CheckListGoal(string name, string description, int points, bool status, int completions, int max, int bonus) : base(name, description, points, status)
+    {
+        _numberOfCompletions = completions;
+        _maxGoals = max;
+        _bonusPoints = bonus;
+    }
+
+
+//    public CheckListGoal() {}
+
+
+
+    public override void RunGoal()
     {
 
     }
 
-    CheckListGoal()
+    public override int RecordEvent()
+    {
+        return 1;
+    }
+
+    public override string ToString()
+    {
+        return "";
+    }
+
+    public override string ListGoal()
+    {
+        return "";
+    }
+
+    private void ObtainMaxGoal()
     {
 
     }
 
-    // override public 
+    private void ObtainBonusPoints()
+    {
 
+    }
+    
 
 }
