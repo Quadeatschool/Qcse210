@@ -84,9 +84,9 @@ abstract public class Goal
         return _goalType;
     }
 
-    virtual public string ListGoal()
+    virtual public string CreateDisplayString()
     {
-        return "";
+        return $"Your Goals are: \n {_name}: \n {_description} \n\n Your score : {_numberOfPoints} points";
     }
 
     public override string ToString()

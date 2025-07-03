@@ -36,7 +36,7 @@ class EternalGoal : Goal
         return "";
     }
 
-    public override string ListGoal()
+    public override string CreateDisplayString()
     {
         return "";
     }

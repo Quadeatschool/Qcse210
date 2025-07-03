@@ -10,13 +10,44 @@ public class Goals
 
     //Methods--------------------------
 
-    Goals()
+    public Goals()
     {
-
+        _goals = new List<Goal>();
+        _filename = "goals.txt";
+        _totalScore = 0;
     }
 
     public void AddGoal(Goal goal)
     {
-        
+        _goals.Add(goal);
     }
+
+    public void LoadGoal()
+    {
+
+    }
+
+    public void SaveGoals()
+    {
+
+    }
+
+
+    public void DisplayGoals()
+    {
+        foreach (Goal goal in _goals)
+        {
+
+            Console.Write($"{goal.CreateDisplayString()}");
+        }
+    }
+
+    public void DisplayScore()
+    {
+
+    }
+
+
+
+
 }

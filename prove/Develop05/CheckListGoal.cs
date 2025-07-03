@@ -26,6 +26,16 @@ class CheckListGoal : Goal
 
     public override int RecordEvent()
     {
+        
+        int goalcount = ++_numberOfCompletions;
+        if (goalcount == _maxGoals)
+        {
+
+            Console.WriteLine($"Congratulations! You have completed the goal '{GetName()}' the maximum number of times.");
+            Console.WriteLine($"You have earned an additional {_bonusPoints} bonus points!");
+            return _bonusPoints;
+        }
+
         return 1;
     }
 
@@ -34,7 +44,7 @@ class CheckListGoal : Goal
         return "";
     }
 
-    public override string ListGoal()
+    public override string CreateDisplayString()
     {
         return "";
     }
