@@ -6,7 +6,7 @@ class SimpleGoal : Goal
         _goalType = "Simple";
     }
 
-    // public void SimpleGoal(){}
+    public SimpleGoal(){}
 
     
 
@@ -21,5 +21,10 @@ class SimpleGoal : Goal
         SetDescription();
         SetPoints();
     }
+
+    public override string GetStringRepresentation()
+{
+    return $"{_goalType}:{GetName()},{GetDescription()},{GetPoints()},{GetStatus()}";
+}
 
 }

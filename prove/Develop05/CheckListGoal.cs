@@ -85,4 +85,9 @@ class CheckListGoal : Goal
         ObtainBonusPoints();
         GetMaxGoal();
     }
+
+    public override string GetStringRepresentation()
+    {
+        return $"{_goalType}:{GetName()},{GetDescription()},{GetPoints()},{GetStatus()},{_numberOfCompletions},{_maxGoals},{_bonusPoints}";
+    }
 }

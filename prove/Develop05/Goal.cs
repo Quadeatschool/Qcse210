@@ -12,7 +12,7 @@ abstract public class Goal
 
     //Methods------------------
 
-    protected Goal(string name, string description, int points, bool status)
+    public Goal(string name, string description, int points, bool status)
     {
         _name = name;
         _description = description;
@@ -71,7 +71,7 @@ abstract public class Goal
 //------------------
     public bool GetStatus()
     {
-        return true;
+        return _status;
     }
 
     public int MarkComplete()
@@ -103,6 +103,32 @@ abstract public class Goal
 
     abstract public void RunGoal();
 
+    public virtual string GetStringRepresentation()
+    {
+        // Include type so you know what to create when loading
+        return $"{_goalType}:{_name},{_description},{_numberOfPoints},{_status}";
+    }
 
+    public static Goal CreateGoalFromString(string line)
+    {
+        // Example: "CheckList:Name,Desc,10,False,0,5,50"
+        var parts = line.Split(':');
+        var type = parts[0];
+        var data = parts[1].Split(',');
+
+        switch (type)
+        {
+            case "Simple":
+                return new SimpleGoal(data[0], data[1], int.Parse(data[2]), bool.Parse(data[3]));
+            case "Eternal":
+                return new EternalGoal(data[0], data[1], int.Parse(data[2]), bool.Parse(data[3]), int.Parse(data[4]));
+            case "CheckList":
+                return new CheckListGoal(
+                    data[0], data[1], int.Parse(data[2]), bool.Parse(data[3]),
+                    int.Parse(data[4]), int.Parse(data[5]), int.Parse(data[6]));
+            default:
+                throw new Exception("Unknown goal type: " + type);
+        }
+    }
 
 }

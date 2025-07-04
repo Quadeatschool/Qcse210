@@ -47,4 +47,9 @@ class EternalGoal : Goal
         SetDescription();
         SetPoints();
     }
+
+    public override string GetStringRepresentation()
+    {
+        return $"{_goalType}:{GetName()},{GetDescription()},{GetPoints()},{GetStatus()},{_numberOfCompletions}";
+    }
 }
