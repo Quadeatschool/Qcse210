@@ -11,7 +11,9 @@ class BreathingActivity : Activity
     ) : base(duration, startingMessage, endingMessage, description, endTime)
     {
         _instructions = instructions;
+        
     }
+
 
     public string Instruct()
     {
@@ -20,6 +22,9 @@ class BreathingActivity : Activity
 
     public override void Run()
     {
+    
+        Console.WriteLine(GetStartingMessage());
+        Console.WriteLine(GetDescription());
         Console.WriteLine(Instruct());
         SetDuration();
 
@@ -28,12 +33,14 @@ class BreathingActivity : Activity
         Tick();
         TimerEnded();
         Instruct();
+        
     }
 
 
-    public void timerExpired()
-    {
-        while (duration = 0);
-    }
+    // public void timerExpired()
+        // {
+        //     while (GetDuration() == 0)
+        //     { }
+        // }
 
-}
+    }

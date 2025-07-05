@@ -7,18 +7,16 @@ abstract class Activity
     private string _endingMessage;
     private string _descrbition;
 
-    private DateTime _EndTime;
+    private DateTime _endTime;
 
     //--------------------------------------
-    public Activity(int _duration, string _startingMessage, string _endingMessage, string _descrbition, DateTime _EndTime)
+    public Activity(int duration, string startingMessage, string endingMessage, string descrbition, DateTime endTime)
     {
-        int Duration = _duration;
-        string StartingMessage = _startingMessage;
-        string EndingMessage = _endingMessage;
-        string descrbition = _descrbition;
-        DateTime EndTime = _EndTime;
-
-
+        _duration = duration;
+        _startingMessage = startingMessage;
+        _endingMessage = endingMessage;
+        _descrbition = descrbition;
+        _endTime = endTime;
     }
 
 
@@ -49,7 +47,15 @@ abstract class Activity
         return _duration;
     }
 
+    public string GetStartingMessage()
+    {
+        return _startingMessage;
+    }
 
+    public string GetDescription()
+    {
+        return _descrbition;
+    }
     public void SetDuration()
     {
         Console.WriteLine("How long in secounds would you like your activity to last?");
@@ -64,6 +70,11 @@ abstract class Activity
         //     input = Console.ReadLine();
         // }
         // _duration = duration;
+    }
+
+    public int GetDuration()
+    {
+        return _duration;
     }
 
     public void Spinner()

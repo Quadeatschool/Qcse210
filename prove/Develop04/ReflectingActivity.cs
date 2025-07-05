@@ -16,8 +16,8 @@ class ReflectingAactivity : Activity
         string questions)
      : base(duration, startingMessage, endingMessage, description, endTime)
     {
-        string _prompt = prompt;
-        string _questions = questions;
+        _prompt = prompt;
+        _questions = questions;
 
     }
 

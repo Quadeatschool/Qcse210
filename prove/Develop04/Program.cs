@@ -6,17 +6,13 @@ class Program
     static void Main(string[] args)
     {
 
-        BreathingActivity tryBreathingActivity = new BreathingActivity(2, "Start", "End", "desc", DateTime.Now, "instructions"
+        BreathingActivity tryBreathingActivity = new BreathingActivity(2, "Welcome to the Breathing Activity", "End", "This activity will walk you though a breathing exercise to help you clear your mind.", DateTime.Now, "instruct"
 );
 
-        // Activity activity = new Activity
-
-
-        
 
         //-----------------------------------------
 
-        ReflectingAactivity tryReflectingAactivity = new ReflectingAactivity(2, "Start", "End", "desc", DateTime.Now, "prompt", "intructions");
+        ReflectingAactivity tryReflectingAactivity = new ReflectingAactivity(2, "Start", "End", "desc", DateTime.Now, "prompt", "questions");
 
        
         //------------------------------------------
@@ -56,19 +52,15 @@ class Program
             switch (choice)
             {
                 case 1:
-                    Console.WriteLine("1. Breathing\n ");
                     tryBreathingActivity.Run();
                     break;
                 case 2:
-                    Console.WriteLine("2. Listing\n");
                     tryListingActivity.Run();
                     break;
                 case 3:
-                    Console.WriteLine("3. Reflecting\n");
                     tryReflectingAactivity.Run();
                     break;
                 case 4:
-                    Console.WriteLine("4. Quit\n");
                     break;
             }
         }
