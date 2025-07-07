@@ -1,46 +1,53 @@
+using System.Threading.Tasks.Dataflow;
+
 class BreathingActivity : Activity
 {
-    private string _instructions;
-    //-------------------------------------------
+    private string[] _instructions;
+
     public BreathingActivity(int duration,
         string startingMessage,
         string endingMessage,
         string description,
         DateTime endTime,
-        string instructions
+        string instructions // Pass as "Breathe in...|Breathe out..."
     ) : base(duration, startingMessage, endingMessage, description, endTime)
     {
-        _instructions = instructions;
-        
+        // Split the instructions string into an array
+        _instructions = instructions.Split('|');
     }
 
-
-    public string Instruct()
+    public string Instruct(int phase)
     {
-        return _instructions;
+        // phase: 0 for in, 1 for out
+        return _instructions[phase % _instructions.Length];
+    }
+
+    public void BreathTimer(int cycles = 3)
+    {
+        int sleepTime = 1000;
+        string animationString = "4321";
+
+        for (int i = 0; i < cycles * 2; i++)
+        {
+            Console.WriteLine(Instruct(i % 2));
+            foreach (char character in animationString)
+            {
+                Console.Write(character);
+                Thread.Sleep(sleepTime);
+                Console.Write("\b \b");
+            }
+            Console.WriteLine();
+        }
     }
 
     public override void Run()
     {
-    
         Console.WriteLine(GetStartingMessage());
         Console.WriteLine(GetDescription());
-        Console.WriteLine(Instruct());
         SetDuration();
-
-        Spinner();
         StartTime();
-        Tick();
+        Spinner();
+        BreathTimer();
         TimerEnded();
-        Instruct();
-        
     }
-
-
-    // public void timerExpired()
-        // {
-        //     while (GetDuration() == 0)
-        //     { }
-        // }
-
-    }
+}

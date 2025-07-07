@@ -6,7 +6,13 @@ class Program
     static void Main(string[] args)
     {
 
-        BreathingActivity tryBreathingActivity = new BreathingActivity(2, "Welcome to the Breathing Activity", "End", "This activity will walk you though a breathing exercise to help you clear your mind.", DateTime.Now, "instruct"
+        BreathingActivity tryBreathingActivity = new BreathingActivity(
+            2,
+            "Welcome to the Breathing Activity",
+            "End",
+            "This activity will walk you though a breathing exercise to help you clear your mind.",
+            DateTime.Now,
+            "Breathe in...|Breathe out..."
 );
 
 
