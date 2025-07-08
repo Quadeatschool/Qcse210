@@ -1,50 +1,26 @@
-using System.Collections;
+using System;
 
 public class Menu
 {
-    public string _title;
-    public string _description;
-    public string _menuItem;
-
-    public void DisplayTitle()
+    public void Display()
     {
-        Console.WriteLine($"{_title}");
-        Console.WriteLine($"{ _description}");
-        Console.WriteLine("1. Write\n 2. Display\n 3. Load\n 4. Save\n 5. Quit\n");
-       
-        
+        Console.WriteLine("\nJournal Menu:");
+        Console.WriteLine("1. Write a new entry");
+        Console.WriteLine("2. Display the journal");
+        Console.WriteLine("3. Load the journal from a file");
+        Console.WriteLine("4. Save the journal to a file");
+        Console.WriteLine("5. Quit");
     }
 
-    public int ProcessMenu()
+    public int GetChoice()
     {
-        Console.WriteLine("Which would you like to pick: ");
-        string _menuItem = Console.ReadLine();
-       
-        if (int.TryParse(_menuItem, out int choice))
+        Console.Write("Select an option (1-5): ");
+        string input = Console.ReadLine();
+        if (int.TryParse(input, out int choice) && choice >= 1 && choice <= 5)
         {
-
-            switch (choice)
-            {
-
-
-                case 1: Console.WriteLine("1. Write\n");
-                    break;
-                case 2: Console.WriteLine("2. Display\n");
-                    break;
-                case 3: Console.WriteLine("3. Load\n");
-                    break;
-                case 4: Console.WriteLine("4. Save\n");
-                    break;
-                case 5: Console.WriteLine("5. Quit\n");
-                    break;
-            }
             return choice;
         }
-        else
-        {
-            Console.WriteLine("That is not an option on the menu, try again");
-            return -1;
-        }
-   }
-    
- }
+        Console.WriteLine("Invalid choice. Please enter a number from 1 to 5.");
+        return -1;
+    }
+}

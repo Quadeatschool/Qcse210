@@ -1,34 +1,40 @@
+using System;
+
 public class JournalEntry
 {
+    public DateTime Date { get; set; }
+    public string Prompt { get; set; }
+    public string Response { get; set; }
 
-    public DateTime _date { get; private set; }
-    private string _prompt { get; set; }
-    string _response { get; set; }
-
-    public void Entry(string prompt, string response)
+    public JournalEntry(string prompt, string response)
     {
-        _date = DateTime.Now;
-        _prompt = prompt;
-        _response = response;
+        Date = DateTime.Now;
+        Prompt = prompt;
+        Response = response;
     }
 
-    public void Entry() {}
+    public JournalEntry(DateTime date, string prompt, string response)
+    {
+        Date = date;
+        Prompt = prompt;
+        Response = response;
+    }
+
     public void Display()
     {
-        Console.WriteLine($"{_date}, {_prompt}, {_response}");
+        Console.WriteLine($"Date: {Date.ToShortDateString()}\nPrompt: {Prompt}\nResponse: {Response}\n");
     }
 
-    public void EntryToSting()
+    public string ToCsv()
     {
-
-    }
-    public void CreateEntryWithPrompt(string prompt)
-    {
-
+        return $"{Date.ToString("o")}|{Prompt.Replace("|", "/")}|{Response.Replace("|", "/")}";
     }
 
-    public void CreateEntryWithData(string date, string prompt, string response)
+    public static JournalEntry FromCsv(string csv)
     {
-
+        var parts = csv.Split('|');
+        if (parts.Length != 3) return null;
+        if (!DateTime.TryParse(parts[0], out DateTime date)) return null;
+        return new JournalEntry(date, parts[1], parts[2]);
     }
 }
