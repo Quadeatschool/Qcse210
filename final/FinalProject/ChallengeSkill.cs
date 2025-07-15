@@ -1,6 +1,6 @@
 public class ChallengeSkill : SkillBase
 {
-    public ChallengeSkill(string name, string description) : base(name, description)
+    public ChallengeSkill(string name, string description, bool isUnlocked, List<SkillBase> prerequisites) : base(name, description, isUnlocked, prerequisites)
     {
         
     }

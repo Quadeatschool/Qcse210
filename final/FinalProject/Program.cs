@@ -9,17 +9,31 @@ class Program
     //     name += "+ betty";
     //      Console.WriteLine($"In Main: {x}, {name}");
 
+
+
     //     }
+
+    // int x = 10;
+    // string name = "bob ";
+
+    // TestByRef(x, ref name);
+
+    // Console.WriteLine($"In Main: {x}, {name}");
+
+
+
     static void Main(string[] args)
     {
         Console.WriteLine("This is the final project.");
 
-        // int x = 10;
-        // string name = "bob ";
+        var variables = new Skill("Variables", "intro to variables", false, new List<SkillBase>());
+        var progress = new PlayerProgress();
 
-        // TestByRef(x, ref name);
+        Console.WriteLine($"Before unlocking: {variables.GetIsUnlocked()}");
+        progress.UnlockSkill(variables);
+        Console.WriteLine($"After unlocking: {variables.GetIsUnlocked()}");
 
-        // Console.WriteLine($"In Main: {x}, {name}");
+
 
 
 

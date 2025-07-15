@@ -10,8 +10,16 @@ public class PlayerProgress
         return true;
     }
 
-    public void UnlockSkill(SkillBase skill)
-    {}
+    public bool UnlockSkill(SkillBase skill)
+    {           
+        //can unlock otherwise false
+        if (skill.CanUnlock(this))
+        {
+            skill.Unlock();
+            return true;
+        }
+        return false;
+    }
 
     public bool IsUnlocked(SkillBase skill)
     {

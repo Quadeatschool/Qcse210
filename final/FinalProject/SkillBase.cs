@@ -3,12 +3,18 @@ abstract public class SkillBase
     private string _name;
     private string _description;
     private bool _isUnlocked;
-    private List<SkillBase> Prerequisites = new List<SkillBase>();
+    private List<SkillBase> _prerequisites = new List<SkillBase>();
 
-    public SkillBase(string name, string description)
+    //---------------------getters
+    public bool GetIsUnlocked() => _isUnlocked;
+    public List<SkillBase> GetPrerequisites() => _prerequisites;
+
+    public SkillBase(string name, string description, bool isUnlocked, List<SkillBase> prerequisites)
     {
         _name = name;
         _description = description;
+        _isUnlocked = isUnlocked;
+        _prerequisites = prerequisites;
     }
 
     public void Unlock()
