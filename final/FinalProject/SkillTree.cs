@@ -1,16 +1,17 @@
 public class SkillTree
 {
-    private List<SkillBase> allSkills = new List<SkillBase>();
+    private List<SkillBase> _allSkills = new List<SkillBase>();
 
-    public void AddSkill(SkillBase skill)
+    public SkillTree(List<SkillBase> allskills)
     {
-        allSkills.Add(skill);
+        _allSkills = allskills;
     }
+    public void AddSkill(SkillBase skill) => _allSkills.Add(skill);
 
-    public SkillBase GetSkill(string name, SkillBase skill)
-    {
-        // Example implementation
-        // return allSkills.FirstOrDefault(s => s.Name == name);
-        return skill;
-    }
+
+    public SkillBase GetSkill(string name) => _allSkills.FirstOrDefault(skill => skill.GetName() == name);
+
+    public List<SkillBase> GetAllSkills() => _allSkills;
+    
+
 }

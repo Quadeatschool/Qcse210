@@ -9,6 +9,7 @@ abstract public class SkillBase
     public bool GetIsUnlocked() => _isUnlocked;
     public List<SkillBase> GetPrerequisites() => _prerequisites;
 
+    public string GetName() => _name; 
     public SkillBase(string name, string description, bool isUnlocked, List<SkillBase> prerequisites)
     {
         _name = name;

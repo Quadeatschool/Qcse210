@@ -33,9 +33,16 @@ class Program
         progress.UnlockSkill(variables);
         Console.WriteLine($"After unlocking: {variables.GetIsUnlocked()}");
 
+//explore fields and elements {}
 
 
+        var loops = new Skill("Loops", "learn loops", false, new List<SkillBase> { variables });
+        var skillList = new List<SkillBase> { variables, loops };
+        var tree = new SkillTree(skillList);
 
+        var foundSkill = tree.GetSkill("Loops");
+        Console.WriteLine($"Found skill: {foundSkill.GetName()}");
+        
 
     }
 }
