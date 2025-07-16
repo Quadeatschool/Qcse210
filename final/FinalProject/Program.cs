@@ -44,8 +44,20 @@ class Program
         Console.WriteLine($"Found skill: {foundSkill.GetName()}");
 
 
-        var skilltree = SkillFactory.CreateDefaultTree();
-        Console.WriteLine($"Total skill: {skilltree.GetAllSkills().Count}");
+        var skillTree = SkillFactory.CreateDefaultTree();
+        Console.WriteLine($"Total skill: {skillTree.GetAllSkills().Count}");
 
+        //get skills grom Skilltree
+        var variableSkill = skillTree.GetSkill("Variables");
+        var loopsSkill = skillTree.GetSkill("Loops");
+
+        Console.WriteLine($"Variables unlocked? {progress.isUnlocked(variableSkill)}");
+        Console.WriteLine($"Loops skill unlocked? {progress.isUnlocked(loopsSkill)}");
+
+        progress.UnlockSkill(variableSkill);
+
+        Console.WriteLine($"Variables unlocked? {progress.isUnlocked(variableSkill)}");
+        Console.WriteLine($"Loops can now unlock? {loops.CanUnlock(progress)}");
+        
     }
 }
