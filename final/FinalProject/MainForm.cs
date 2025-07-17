@@ -5,8 +5,8 @@ public class MainForm : Form
 {
     private SkillTree _skillTree;
     private PlayerProgress _progress;
-    
-    
+
+
     private Dictionary<SkillBase, SkillButton> _buttonMap;
 
     public MainForm()
@@ -28,14 +28,24 @@ public class MainForm : Form
 
         _buttonMap = new Dictionary<SkillBase, SkillButton>();
 
+        this.Controls.Add(flowPanel); //attatched object to the main form
+
         foreach (var skill in _skillTree.GetAllSkills())
         {
-            var button = new SkillButton(skill, _progress);
+            var button = new SkillButton(skill, _progress, this);
+            _buttonMap[skill] = button;
             flowPanel.Controls.Add(button);
         }
-
-            this.Controls.Add(flowPanel); // the oject is attatched to the main form
     }
 
+    //refresh ui 
+    public void RefreshAllSkillButtons()
+    {
+        foreach (var button in _buttonMap.Values)
+        {
+            button.RefreshButton();
+        }
+    }
 
+    
 }

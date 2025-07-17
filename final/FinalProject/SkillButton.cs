@@ -5,13 +5,15 @@ using System.CodeDom;        // Gives access to Color, Font, etc.
 
 public class SkillButton : Button
 {
+    private MainForm _mainForm;
     private SkillBase _skill;
     private PlayerProgress _progress;
 
-    public SkillButton(SkillBase skill, PlayerProgress progress)
+    public SkillButton(SkillBase skill, PlayerProgress progress, MainForm mainForm)
     {
         _skill = skill;
         _progress = progress;
+        _mainForm = mainForm;
         this.Text = _skill.GetName();
 
         this.Width = 150;
@@ -23,9 +25,12 @@ public class SkillButton : Button
         {
             if (_progress.UnlockSkill(_skill))
             {
-                UpdateButtonColor();
+                UpdateButtonColor(); //changes the color and user progresses a skill
+                _mainForm.RefreshAllSkillButtons();
             }
         };
+
+
     }
 
     private void UpdateButtonColor()
@@ -51,5 +56,11 @@ public class SkillButton : Button
     {
 
     }
+
+    public void RefreshButton()
+    {
+        UpdateButtonColor();
+    }
+
 }
 
