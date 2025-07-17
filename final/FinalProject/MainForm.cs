@@ -6,6 +6,8 @@ public class MainForm : Form
     private SkillTree _skillTree;
     private PlayerProgress _progress;
 
+    private Label _progressLabel; //example 1/2 skills unlocked
+
 
     private Dictionary<SkillBase, SkillButton> _buttonMap;
 
@@ -36,6 +38,17 @@ public class MainForm : Form
             _buttonMap[skill] = button;
             flowPanel.Controls.Add(button);
         }
+
+        _progressLabel = new Label
+        {
+            Text = "Unlocked 0 / 0 skills",
+            AutoSize = true,
+            Font = new Font("Arial", 12, FontStyle.Bold),
+            Dock = DockStyle.Top,
+            TextAlign = ContentAlignment.MiddleCenter
+        };
+
+        this.Controls.Add(_progressLabel);
     }
 
     //refresh ui 
