@@ -1,6 +1,7 @@
 using System;
+using System.Windows.Forms;
 
-class Program
+internal static class Program
 {
 
     // static void TestByRef(int x, ref string name)
@@ -25,6 +26,15 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("This is the final project.");
+
+        //endows a nice a good looking UI style
+        Application.EnableVisualStyles();
+
+        // Default text rendering a WinForms Standard
+        Application.SetCompatibleTextRenderingDefault(false);
+
+        //launch it
+        Application.Run(new MainForm());
 
         var variables = new Skill("Variables", "intro to variables", false, new List<SkillBase>());
         var progress = new PlayerProgress();
@@ -59,5 +69,6 @@ class Program
         Console.WriteLine($"Variables unlocked? {progress.isUnlocked(variableSkill)}");
         Console.WriteLine($"Loops can now unlock? {loops.CanUnlock(progress)}");
         
+
     }
 }
