@@ -21,7 +21,7 @@ class Program
                     Console.WriteLine($"Prompt: {prompt}");
                     Console.Write("Your response: ");
                     string response = Console.ReadLine();
-                    JournalEntry entry = new JournalEntry(prompt, response);
+                    JournalEntry entry = new JournalEntry(DateTime.Now, prompt, response);
                     journal.AddEntry(entry);
                     Console.WriteLine("Entry added!\n");
                     break;

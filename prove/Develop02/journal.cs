@@ -9,6 +9,7 @@ public class Journal
     public void AddEntry(JournalEntry entry)
     {
         _entries.Add(entry);
+        Console.WriteLine($"Entry added. Total entries: {_entries.Count}");
     }
 
     public void Display()
@@ -21,29 +22,40 @@ public class Journal
         foreach (var entry in _entries)
         {
             entry.Display();
+            Console.WriteLine("------");
         }
     }
 
     public void SaveToFile(string filename)
     {
-        using (StreamWriter writer = new StreamWriter(filename))
+        try
         {
-            foreach (var entry in _entries)
+            Console.WriteLine($"Saving {_entries.Count} entries...");
+            using (StreamWriter writer = new StreamWriter(filename))
             {
-                writer.WriteLine(entry.ToCsv());
+                foreach (var entry in _entries)
+                {
+                    writer.WriteLine(entry.ToCsv());
+                }
             }
+            Console.WriteLine($"Journal saved to {Path.GetFullPath(filename)}\n");
         }
-        Console.WriteLine($"Journal saved to {filename}\n");
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error saving journal: {ex.Message}");
+        }
     }
 
     public void LoadFromFile(string filename)
     {
+
+        _entries.Clear(); // prevents duplicates when loading
         if (!File.Exists(filename))
         {
             Console.WriteLine("File not found.\n");
             return;
         }
-        _entries.Clear();
+        
         foreach (var line in File.ReadAllLines(filename))
         {
             var entry = JournalEntry.FromCsv(line);
