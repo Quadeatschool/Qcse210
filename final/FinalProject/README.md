@@ -23,4 +23,4 @@ A Windows Forms application simulating a programming skill tree. Unlock skills l
 Created by Quade Hafen (2025)
 
 ## side note: 
-I used AI to teach me how to write syntax and logic, but I did not copy paste a single line of code from AI.
+I used AI to teach me how to the write syntax and logic, but I did not copy paste a single line of code from AI or type it as it gave it.
