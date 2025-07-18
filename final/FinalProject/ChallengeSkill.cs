@@ -11,9 +11,9 @@ public class ChallengeSkill : SkillBase
         return false;
     }
 
-    private bool WasQuestionCorrect()
-    {
-        // your logic here
-        return false;
-    }
+    // private bool WasQuestionCorrect()
+    // {
+    //     // your logic here
+    //     return false;
+    // }
 }

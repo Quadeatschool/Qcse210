@@ -62,5 +62,12 @@ public class SkillButton : Button
         UpdateButtonColor();
     }
 
+    public SkillBase GetSkill() 
+    {
+        return _skill;
+    }
+
+
+
 }
 

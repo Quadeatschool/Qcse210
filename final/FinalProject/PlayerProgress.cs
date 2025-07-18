@@ -5,7 +5,7 @@ public class PlayerProgress
    public PlayerProgress() 
    {}
 
-    public bool isUnlocked(SkillBase skill) => _unlockedSkills.Contains(skill);
+    public bool IsUnlocked(SkillBase skill) => _unlockedSkills.Contains(skill);
 
     public bool UnlockSkill(SkillBase skill) 
     {           

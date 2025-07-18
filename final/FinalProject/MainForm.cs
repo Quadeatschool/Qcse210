@@ -52,7 +52,7 @@ public class MainForm : Form
     }
 
     //refresh ui 
-    public void RefreshAllSkillButtons()
+    private void RefreshSkillButton()
     {
         foreach (var button in _buttonMap.Values)
         {
@@ -60,5 +60,21 @@ public class MainForm : Form
         }
     }
 
-    
+    private void UpdateProgressLabel()
+    {
+        int unlocked = _skillTree.GetAllSkills().Count(skill => skill.GetIsUnlocked());
+
+        int total = _skillTree.GetAllSkills().Count;
+
+        _progressLabel.Text = $"Unlocked {unlocked} / {total} skills";
+
+
+    }
+
+    public void RefreshAllSkillButtons()
+    {
+        RefreshSkillButton();
+        UpdateProgressLabel();
+    }
+
 }

@@ -36,38 +36,38 @@ internal static class Program
         //launch it
         Application.Run(new MainForm());
 
-        var variables = new Skill("Variables", "intro to variables", false, new List<SkillBase>());
-        var progress = new PlayerProgress();
+        // var variables = new Skill("Variables", "intro to variables", false, new List<SkillBase>());
+        // var progress = new PlayerProgress();
 
-        Console.WriteLine($"Before unlocking: {variables.GetIsUnlocked()}");
-        progress.UnlockSkill(variables);
-        Console.WriteLine($"After unlocking: {variables.GetIsUnlocked()}");
+        // Console.WriteLine($"Before unlocking: {variables.GetIsUnlocked()}");
+        // progress.UnlockSkill(variables);
+        // Console.WriteLine($"After unlocking: {variables.GetIsUnlocked()}");
 
-        //explore fields and elements {}
-
-
-        var loops = new Skill("Loops", "learn loops", false, new List<SkillBase> { variables });
-        var skillList = new List<SkillBase> { variables, loops };
-        var tree = new SkillTree(skillList);
-
-        var foundSkill = tree.GetSkill("Loops");
-        Console.WriteLine($"Found skill: {foundSkill.GetName()}");
+        // //explore fields and elements {}
 
 
-        var skillTree = SkillFactory.CreateDefaultTree();
-        Console.WriteLine($"Total skill: {skillTree.GetAllSkills().Count}");
+        // var loops = new Skill("Loops", "learn loops", false, new List<SkillBase> { variables });
+        // var skillList = new List<SkillBase> { variables, loops };
+        // var tree = new SkillTree(skillList);
 
-        //get skills grom Skilltree
-        var variableSkill = skillTree.GetSkill("Variables");
-        var loopsSkill = skillTree.GetSkill("Loops");
+        // var foundSkill = tree.GetSkill("Loops");
+        // Console.WriteLine($"Found skill: {foundSkill.GetName()}");
 
-        Console.WriteLine($"Variables unlocked? {progress.isUnlocked(variableSkill)}");
-        Console.WriteLine($"Loops skill unlocked? {progress.isUnlocked(loopsSkill)}");
 
-        progress.UnlockSkill(variableSkill);
+        // var skillTree = SkillFactory.CreateDefaultTree();
+        // Console.WriteLine($"Total skill: {skillTree.GetAllSkills().Count}");
 
-        Console.WriteLine($"Variables unlocked? {progress.isUnlocked(variableSkill)}");
-        Console.WriteLine($"Loops can now unlock? {loops.CanUnlock(progress)}");
+        // //get skills grom Skilltree
+        // var variableSkill = skillTree.GetSkill("Variables");
+        // var loopsSkill = skillTree.GetSkill("Loops");
+
+        // Console.WriteLine($"Variables unlocked? {progress.isUnlocked(variableSkill)}");
+        // Console.WriteLine($"Loops skill unlocked? {progress.isUnlocked(loopsSkill)}");
+
+        // progress.UnlockSkill(variableSkill);
+
+        // Console.WriteLine($"Variables unlocked? {progress.isUnlocked(variableSkill)}");
+        // Console.WriteLine($"Loops can now unlock? {loops.CanUnlock(progress)}");
         
 
     }
