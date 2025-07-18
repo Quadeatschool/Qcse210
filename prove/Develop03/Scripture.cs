@@ -2,7 +2,6 @@ public class Scripture
 {
     private string _textString;
     private Reference _reference;
-
     private List<Word> _wordList;
 
     // Scripture Methods

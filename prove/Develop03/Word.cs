@@ -10,7 +10,7 @@ public class Word
     }
     public void HideWord()
     {
-         _hiddenWord = true;
+        _hiddenWord = true;
     }
 
     public void RevealWord()
@@ -28,5 +28,7 @@ public class Word
     {
         return _hiddenWord;
     }
+    
+    //use this to kick yourself out of the program
 
 }
