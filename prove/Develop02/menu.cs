@@ -10,17 +10,18 @@ public class Menu
         Console.WriteLine("3. Load the journal from a file");
         Console.WriteLine("4. Save the journal to a file");
         Console.WriteLine("5. Quit");
+        Console.WriteLine("6. Show total number of entries");
     }
 
     public int GetChoice()
     {
-        Console.Write("Select an option (1-5): ");
+        Console.Write("Select an option (1-6): ");
         string input = Console.ReadLine();
-        if (int.TryParse(input, out int choice) && choice >= 1 && choice <= 5)
+        if (int.TryParse(input, out int choice) && choice >= 1 && choice <= 6)
         {
             return choice;
         }
-        Console.WriteLine("Invalid choice. Please enter a number from 1 to 5.");
+        Console.WriteLine("Invalid choice. Please enter a number from 1 to 6.");
         return -1;
     }
 }

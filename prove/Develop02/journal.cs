@@ -21,8 +21,8 @@ public class Journal
         }
         foreach (var entry in _entries)
         {
-            entry.Display();
             Console.WriteLine("------");
+            entry.Display();
         }
     }
 
@@ -55,7 +55,7 @@ public class Journal
             Console.WriteLine("File not found.\n");
             return;
         }
-        
+
         foreach (var line in File.ReadAllLines(filename))
         {
             var entry = JournalEntry.FromCsv(line);
@@ -64,4 +64,13 @@ public class Journal
         }
         Console.WriteLine($"Journal loaded from {filename}\n");
     }
+
+
+    // Creativity: Counts the number of entries in the journal
+    public void CountEntries()
+    {
+        Console.WriteLine($"Total entries in journal: {_entries.Count}\n");
+    }
+    
+
 }

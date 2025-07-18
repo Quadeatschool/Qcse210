@@ -46,8 +46,13 @@ class Program
                     running = false;
                     Console.WriteLine("Goodbye!");
                     break;
+                // Creativity: counts entries
+                case 6:
+                    journal.CountEntries();
+                    break;
                 default:
                     // Invalid
+                    Console.WriteLine("Invalid choice, please enter a number 1-6.\n");
                     break;
             }
         }
