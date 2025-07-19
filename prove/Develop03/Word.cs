@@ -28,6 +28,7 @@ public class Word
     {
         return _hiddenWord;
     }
+
     
     //use this to kick yourself out of the program
 
