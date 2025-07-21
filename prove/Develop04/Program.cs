@@ -8,7 +8,7 @@ class Program
 
         BreathingActivity tryBreathingActivity = new BreathingActivity(
             2,
-            "Welcome to the Breathing Activity",
+            "the Breathing Activity",
             "End",
             "This activity will walk you though a breathing exercise to help you clear your mind.",
             "Breathe in...|Breathe out..."
@@ -35,7 +35,7 @@ class Program
         };
 
         ReflectingActivity tryReflectingActivity = new ReflectingActivity(
-            2, "Welcome to the Reflecting Activity.", $"You have completed another seconds of the Reflecting Activity.", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.", prompts, questions);
+            2, "the Reflecting Activity.", "end", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.", prompts, questions);
 
        //------------------------------------------
 
@@ -50,7 +50,7 @@ class Program
         // Pass the list to your ListingActivity constructor
         ListingActivity tryListingActivity = new ListingActivity(
             2,
-            "Start",
+            "Listing Activity",
             "End",
             "desc",
             sampleList // <-- pass your list here

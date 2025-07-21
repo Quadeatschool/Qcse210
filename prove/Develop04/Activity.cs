@@ -46,7 +46,7 @@ abstract class Activity
     public void DisplayStartMessage()
     {
         Console.Clear();
-        Console.WriteLine($"Starting Activity: {_startingMessage}\n");
+        Console.WriteLine($"Welcome to the {_startingMessage}\n");
         Console.WriteLine($"{_descrbition}\n");
 
         Console.Write("How many seconds would you like to do this activity for? ");
@@ -93,6 +93,7 @@ abstract class Activity
         {
             Console.Write($"{i}");
             Thread.Sleep(1000);
+            Console.Write("\b \b");
         }
     }
 
