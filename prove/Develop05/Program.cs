@@ -40,6 +40,7 @@ class Program
         
         while (choice != 6)
         {
+            goals.DisplayScore();
             choice = GoalMenu.displayMenu();
             switch (choice)
             {

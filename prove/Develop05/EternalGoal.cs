@@ -50,6 +50,6 @@ class EternalGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return $"{_goalType}:{GetName()},{GetDescription()},{GetPoints()},{GetStatus()},{_numberOfCompletions}";
+        return $"{base.GetStringRepresentation()}|{_numberOfCompletions}";
     }
 }

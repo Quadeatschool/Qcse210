@@ -25,6 +25,8 @@ public class Goals
     public void LoadGoal()
     {
         _goals.Clear();
+        Console.WriteLine("What is the name of your file? ");
+        _filename = Console.ReadLine();
         foreach (var line in File.ReadAllLines(_filename))
         {
             Goal goal = Goal.CreateGoalFromString(line);
@@ -36,6 +38,8 @@ public class Goals
     {
 
         //Goes through the list of goals and writes them to my file
+        Console.WriteLine("What is the name of your file? ");
+        _filename = Console.ReadLine();
         using (StreamWriter outputFile = new StreamWriter(_filename))
         {
             foreach (Goal goal in _goals)
@@ -59,7 +63,7 @@ public class Goals
 
     public void DisplayScore()
     {
-        Console.WriteLine($"You now have {_totalScore}");
+        Console.WriteLine($"You now have {_totalScore} points \n");
 
     }
 

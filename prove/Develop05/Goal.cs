@@ -91,7 +91,7 @@ abstract public class Goal
         {
             statusString = " [X]";
         }
-        return $" {statusString}: {_name} | {_description} | {_numberOfPoints}";
+        return $" {statusString}:{_name}|{_description}|{_numberOfPoints}\n";
     }
 
     public override string ToString()
@@ -111,7 +111,7 @@ abstract public class Goal
     public virtual string GetStringRepresentation()
     {
         // Include type so you know what to create when loading
-        return $"{_goalType}| {_name} | {_description} | {_numberOfPoints} | {_status}";
+        return $"{_goalType}:{_name}|{_description}|{_numberOfPoints}|{_status}";
     }
 
     public static Goal CreateGoalFromString(string line)

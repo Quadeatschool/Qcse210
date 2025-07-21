@@ -88,6 +88,6 @@ class CheckListGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return $"{_goalType}:{GetName()},{GetDescription()},{GetPoints()},{GetStatus()},{_numberOfCompletions},{_maxGoals},{_bonusPoints}";
+        return $"{base.GetStringRepresentation()}|{_numberOfCompletions}|{_maxGoals}|{_bonusPoints}";
     }
 }
