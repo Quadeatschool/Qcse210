@@ -48,10 +48,12 @@ public class Goals
 
     public void DisplayGoals()
     {
+
+        int count = 1;
         foreach (Goal goal in _goals)
         {
 
-            Console.Write($"{goal.CreateDisplayString()}");
+            Console.Write($"{count++}: {goal.CreateDisplayString()}");
         }
     }
 

@@ -1,5 +1,3 @@
-using System.Threading.Tasks.Dataflow;
-
 class BreathingActivity : Activity
 {
     private string[] _instructions;
@@ -8,9 +6,8 @@ class BreathingActivity : Activity
         string startingMessage,
         string endingMessage,
         string description,
-        DateTime endTime,
         string instructions // Pass as "Breathe in...|Breathe out..."
-    ) : base(duration, startingMessage, endingMessage, description, endTime)
+    ) : base(duration, startingMessage, endingMessage, description)
     {
         // Split the instructions string into an array
         _instructions = instructions.Split('|');
@@ -22,32 +19,31 @@ class BreathingActivity : Activity
         return _instructions[phase % _instructions.Length];
     }
 
-    public void BreathTimer(int cycles = 3)
+    public void BreathTimer()
     {
-        int sleepTime = 1000;
-        string animationString = "4321";
+        DateTime endTime = DateTime.Now.AddSeconds(GetDuration());
 
-        for (int i = 0; i < cycles * 2; i++)
+        int phase = 0;
+
+        while (DateTime.Now < endTime)
         {
-            Console.WriteLine(Instruct(i % 2));
-            foreach (char character in animationString)
-            {
-                Console.Write(character);
-                Thread.Sleep(sleepTime);
-                Console.Write("\b \b");
-            }
-            Console.WriteLine();
+            Console.WriteLine(_instructions[phase % _instructions.Length]);
+
+            Countdown(4);
+
+            phase++;
         }
     }
 
     public override void Run()
     {
-        Console.WriteLine(GetStartingMessage());
-        Console.WriteLine(GetDescription());
-        SetDuration();
-        StartTime();
-        Spinner();
-        BreathTimer();
-        TimerEnded();
+
+        
+        DisplayStartMessage();
+
+        BreathTimer(); // The is what will run the breathing part of the activity 
+
+        DisplayEndMessage();
+
     }
 }

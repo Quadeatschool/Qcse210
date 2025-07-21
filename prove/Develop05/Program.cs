@@ -11,7 +11,7 @@ class Program
     {
 
         
-        CheckListGoal  listGoal = new CheckListGoal ("", "", 1, true, 0, 0, 0); 
+        CheckListGoal  listGoal = new CheckListGoal ("", "", 1, false, 0, 0, 0); 
         EternalGoal foreverGoal = new EternalGoal("Exercise", "Run daily", 5, false, 0);
         SimpleGoal simpleGoal = new SimpleGoal("Read Book", "Read 10 pages", 10, false);
         Goals goals = new Goals();
@@ -53,13 +53,13 @@ class Program
 
                     break;
                 case 3:
-                    // Add logic for case 3
+                    goals.SaveGoals();
                     break;
                 case 4:
-                    // Add logic for case 4 
+                    goals.LoadGoal(); 
                     break;
                 case 5:
-                    // Add logic for case 5
+                    // RecordEvent()
                     break;
 
             }

@@ -86,7 +86,12 @@ abstract public class Goal
 
     virtual public string CreateDisplayString()
     {
-        return $"Your Goals are: \n {_name}: \n {_description} \n\n Your score : {_numberOfPoints} points";
+        string statusString = "[ ]";
+        if (_status)
+        {
+            statusString = " [X]";
+        }
+        return $" {statusString}: {_name} | {_description} | {_numberOfPoints}";
     }
 
     public override string ToString()
@@ -106,15 +111,15 @@ abstract public class Goal
     public virtual string GetStringRepresentation()
     {
         // Include type so you know what to create when loading
-        return $"{_goalType}:{_name},{_description},{_numberOfPoints},{_status}";
+        return $"{_goalType}| {_name} | {_description} | {_numberOfPoints} | {_status}";
     }
 
     public static Goal CreateGoalFromString(string line)
     {
-        // Example: "CheckList:Name,Desc,10,False,0,5,50"
+        // Example: "CheckList | Name | Desc | 10 | False | 0 | 5 | 50"
         var parts = line.Split(':');
         var type = parts[0];
-        var data = parts[1].Split(',');
+        var data = parts[1].Split('|');
 
         switch (type)
         {

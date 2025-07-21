@@ -1,4 +1,5 @@
-using System.Runtime;
+using System;
+using System.Threading;
 
 abstract class Activity
 {
@@ -7,97 +8,98 @@ abstract class Activity
     private string _endingMessage;
     private string _descrbition;
 
-    private DateTime _endTime;
+    // private DateTime _endTime;
 
     //--------------------------------------
-    public Activity(int duration, string startingMessage, string endingMessage, string descrbition, DateTime endTime)
+    public Activity(int duration, string startingMessage, string endingMessage, string descrbition)
     {
         _duration = duration;
         _startingMessage = startingMessage;
         _endingMessage = endingMessage;
         _descrbition = descrbition;
-        _endTime = endTime;
+        // _endTime = endTime;
     }
 
+    //--------------------------------------
+    public int GetDuration() => _duration;
 
-    public DateTime Timer(DateTime endtime, int duration)
+    public int SetDuration(int duration)
     {
-        return DateTime.Now;
-    }
-
-    // if time left is greater then zero then count down
-    public void Tick()
-    {
-        if (_duration >= 0)
+        if (duration > 0)
         {
-            _duration--;
+            _duration = duration;
         }
-
-    }
-
-
-    // returns false if duration hits zero
-    public bool TimerEnded()
-    {
-        return _duration <= 0;
-    }
-
-    public int StartTime()
-    {
+        else
+        {
+            Console.WriteLine("Duration must be a positive number.");
+        }
         return _duration;
     }
 
-    public string GetStartingMessage()
+    public string GetStartingMessage() => _startingMessage;
+
+    public string GetEndingMessage() => _endingMessage;
+
+    public string GetDescription() => _descrbition;
+
+
+    public void DisplayStartMessage()
     {
-        return _startingMessage;
+        Console.Clear();
+        Console.WriteLine($"Starting Activity: {_startingMessage}\n");
+        Console.WriteLine($"{_descrbition}\n");
+
+        Console.Write("How many seconds would you like to do this activity for? ");
+        string input = Console.ReadLine();
+
+        while (!int.TryParse(input, out _duration) || _duration <= 0)
+        {
+            Console.Write("Please enter a valid positive number for seconds: ");
+            input = Console.ReadLine();
+        }
+        Console.WriteLine("\nGet ready to begin . . .");
+        Spinner(3);
     }
 
-    public string GetDescription()
+    public void DisplayEndMessage()
     {
-        return _descrbition;
-    }
-    public void SetDuration()
-    {
-        Console.WriteLine("How long in secounds would you like your activity to last?");
-        _duration = int.Parse(Console.ReadLine());
-
-        //     Console.WriteLine("How long in seconds would you like your activity to last?");
-        // string input = Console.ReadLine();
-        // int duration;
-        // while (!int.TryParse(input, out duration) || duration <= 0)
-        // {
-        //     Console.WriteLine("Please enter a valid positive number for duration:");
-        //     input = Console.ReadLine();
-        // }
-        // _duration = duration;
+        Console.WriteLine("\nWell done!\n");
+        Spinner(2);
+        Console.WriteLine($"You have completed {_startingMessage} for {_duration} seconds.");
+        Spinner(3);
     }
 
-    public int GetDuration()
+    public void Spinner(int seconds)
     {
-        return _duration;
-    }
+        string[] symbols = { "\\", "/", "|", "\\" };
+        DateTime endTime = DateTime.Now.AddSeconds(seconds);
 
-    public void Spinner()
-    {
-        int sleepTime = 250;
-
-        DateTime currentTime = DateTime.Now;
-        DateTime endTime = currentTime.AddSeconds(_duration);
-
-        string animationString = "\\/|\\/";
-        int index = 0;
         while (DateTime.Now < endTime)
         {
-            Console.Write(animationString[index++ % animationString.Length]);
-            // % in this case keeps the loop going 0-4
-            Thread.Sleep(sleepTime);
-            Console.Write("\b");
-
-            // if two digit time then add an if with another \b
+            foreach (string symbol in symbols)
+            {
+                Console.Write(symbol);
+                Thread.Sleep(250);
+                Console.Write("\b \b");
+            }
         }
-
+        Console.WriteLine();
     }
 
+    //--------------------------------------
+    public void Countdown(int seconds)
+    {
+        for (int i = seconds; i > 0; i--)
+        {
+            Console.Write($"{i}");
+            Thread.Sleep(1000);
+        }
+    }
+
+    protected DateTime GetEndTime()
+    {
+        return DateTime.Now.AddSeconds(_duration);
+    }
     abstract public void Run();
    
 
