@@ -26,8 +26,9 @@ class EternalGoal : Goal
 
     public override int RecordEvent()
     {
-        return 1;
 
+        _numberOfCompletions++;
+        return GetPoints(); 
 
     }
 

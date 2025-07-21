@@ -74,9 +74,9 @@ abstract public class Goal
         return _status;
     }
 
-    public int MarkComplete()
+    public void SetStatus()
     {
-        return 1;
+        _status = true;
     }
 
     virtual public string GetGoal()

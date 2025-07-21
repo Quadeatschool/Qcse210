@@ -27,11 +27,22 @@ public class Goals
         _goals.Clear();
         Console.WriteLine("What is the name of your file? ");
         _filename = Console.ReadLine();
+
         foreach (var line in File.ReadAllLines(_filename))
         {
-            Goal goal = Goal.CreateGoalFromString(line);
-            _goals.Add(goal);
+            var parts = line.Split(':');
+            var type = parts[0];
+            if (type == "totalscore")
+            {
+                _totalScore = int.Parse(parts[1]);
+            }
+            else
+            {
+                Goal goal = Goal.CreateGoalFromString(line);
+                _goals.Add(goal);
+            }
         }
+            
     }
 
     public void SaveGoals()
@@ -42,10 +53,12 @@ public class Goals
         _filename = Console.ReadLine();
         using (StreamWriter outputFile = new StreamWriter(_filename))
         {
+            outputFile.WriteLine($"totalscore:{_totalScore}");
             foreach (Goal goal in _goals)
             {
                 outputFile.WriteLine(goal.GetStringRepresentation());
             }
+
         }
     }
 
@@ -69,7 +82,11 @@ public class Goals
 
     public void RecordEvent()
     {
+        DisplayGoals();
+        Console.WriteLine("Which goal have you made progress on?");
+        int choice = int.Parse(Console.ReadLine());
 
+        _totalScore += _goals[choice - 1].RecordEvent();
     }
 
     private void ObtainFileName(string prompt)

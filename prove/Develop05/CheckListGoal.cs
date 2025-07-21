@@ -36,7 +36,7 @@ class CheckListGoal : Goal
             return _bonusPoints;
         }
 
-        return 1;
+        return GetPoints();
     }
 
     public override string ToString()

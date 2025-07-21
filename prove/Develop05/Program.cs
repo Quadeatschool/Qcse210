@@ -51,7 +51,6 @@ class Program
                 // Add other cases as needed
                 case 2:
                     goals.DisplayGoals();
-
                     break;
                 case 3:
                     goals.SaveGoals();
@@ -60,7 +59,7 @@ class Program
                     goals.LoadGoal(); 
                     break;
                 case 5:
-                    // RecordEvent()
+                    goals.RecordEvent();
                     break;
 
             }

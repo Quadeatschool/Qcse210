@@ -8,11 +8,12 @@ class SimpleGoal : Goal
 
     public SimpleGoal(){}
 
-    
+
 
     public override int RecordEvent()
     {
-        return 1;
+        SetStatus();
+        return GetPoints();
     }
 
     public override void RunGoal()
