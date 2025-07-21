@@ -40,11 +40,13 @@ class Program
        //------------------------------------------
 
         // Create a list of strings
-        List<string> sampleList = new List<string>
+        List<string> samplePrompts = new List<string>
         {
-            "Item 1",
-            "Item 2",
-            "Item 3"
+            "Who are people that you appreciate?",
+            "What are personal strengths of yours?",
+            "Who have you helped this week?",
+            "What moments made you happy recently?",
+            "Who are some of your personal heroes?"
         };
 
         // Pass the list to your ListingActivity constructor
@@ -52,8 +54,8 @@ class Program
             2,
             "Listing Activity",
             "End",
-            "desc",
-            sampleList // <-- pass your list here
+            "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.",
+            samplePrompts // <-- pass your list here
         );
 
        
@@ -76,10 +78,11 @@ class Program
                     tryBreathingActivity.Run();
                     break;
                 case 2:
-                    tryListingActivity.Run();
+                    tryReflectingActivity.Run();
                     break;
                 case 3:
-                    tryReflectingActivity.Run();
+                    tryListingActivity.Run();
+                    
                     break;
                 case 4:
                     break;

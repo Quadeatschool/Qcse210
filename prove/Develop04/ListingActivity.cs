@@ -30,9 +30,11 @@
 
         DisplayStartMessage();
 
+        Console.WriteLine("List as many responses as you can to the following prompt: \n");
+
         Random rand = new Random();
         string prompt = _prompts[rand.Next(_prompts.Count)];
-        Console.WriteLine($"Prompt: {prompt}\n");
+        Console.WriteLine($"---{prompt}---\n");
 
         Console.WriteLine("You will have a few seconds to think, then start listing . . .");
         Countdown(5);
@@ -44,10 +46,10 @@
 
         while (DateTime.Now < endTime)
         {
-            Console.Write("Enter an item");
+            Console.Write("> ");
             string userInput = Console.ReadLine();
 
-            if ((!string.IsNullOrWhiteSpace(userInput)))
+            if (!string.IsNullOrWhiteSpace(userInput))
             {
                 userEntries.Add(userInput);
                 count++;

@@ -16,8 +16,8 @@ public class Menu
     {
         Console.WriteLine("Welcome to quality time with yourself. Enter a number to pick a mindfulness activity:");
         Console.WriteLine("1. Breathing");
-        Console.WriteLine("2. Listing");
-        Console.WriteLine("3. Reflecting");
+        Console.WriteLine("2. Reflecting");
+        Console.WriteLine("3. Listing");
         Console.WriteLine("4. Quit");
        
 

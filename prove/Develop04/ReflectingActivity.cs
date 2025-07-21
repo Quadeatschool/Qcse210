@@ -55,16 +55,16 @@ private List<string> _questions = new List<string>
         
 
         DisplayStartMessage();
-        Console.Clear();
         Console.WriteLine("Consider the following prompt:\n ");
-        Console.WriteLine("---Think of a time when you did something really difficult. ---\n");
-        Console.WriteLine("When you have something in mind press Enter to continue...");
-        Console.ReadLine(); // This waits for Enter and returns the input (empty string if just Enter)
 
         Random rand = new Random();
         string prompt = _prompts[rand.Next(_prompts.Count)];
-        Console.WriteLine($"Prompt: {prompt}\n");
+        Console.WriteLine($"--- {prompt} ---\n");
+        Console.WriteLine("When you have something in mind press Enter to continue...");
+        Console.ReadLine(); // This waits for Enter and returns the input (empty string if just Enter)
+        Console.Write("Now ponder on each of the following questions as they related to this experience.");
         Spinner(3);
+        Console.WriteLine();
 
 
         DateTime endTime = DateTime.Now.AddSeconds(GetDuration());
@@ -72,8 +72,10 @@ private List<string> _questions = new List<string>
         while (DateTime.Now < endTime)
         {
             string question = _questions[rand.Next(_questions.Count)];
-            Console.WriteLine($"\nQuestion: {question}");
-            Spinner(4);
+            Console.Write($"> {question}");
+            Spinner(10);
+            Console.WriteLine();
+            
         }
 
         DisplayEndMessage();

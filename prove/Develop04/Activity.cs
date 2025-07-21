@@ -57,6 +57,7 @@ abstract class Activity
             Console.Write("Please enter a valid positive number for seconds: ");
             input = Console.ReadLine();
         }
+        Console.Clear();
         Console.WriteLine("\nGet ready to begin . . .");
         Spinner(3);
     }
@@ -71,7 +72,7 @@ abstract class Activity
 
     public void Spinner(int seconds)
     {
-        string[] symbols = { "\\", "/", "|", "\\" };
+        string[] symbols = { "\\","-", "/", "|", "\\","-" };
         DateTime endTime = DateTime.Now.AddSeconds(seconds);
 
         while (DateTime.Now < endTime)
