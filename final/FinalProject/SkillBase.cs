@@ -28,6 +28,6 @@ abstract public class SkillBase
     {
         Console.WriteLine("try me");
         return false; // or your logic
-    }
+    }   
 
 }

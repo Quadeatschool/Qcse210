@@ -10,7 +10,7 @@ public static class SkillFactory
         var midSkills = CreateMidLevelSkills(rootSkills);
         var advancedSkills = CreateAdvancedSkills(midSkills);
         var expertSkills = CreateExpertSkills(advancedSkills);
- 
+
 
         var allSkills = new List<SkillBase>();
         allSkills.AddRange(rootSkills);
