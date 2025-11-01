@@ -35,7 +35,10 @@ class Program
 
             Console.WriteLine("Hidden Complete. Press quit to exit");
             Console.WriteLine("Enter a number of words to hide (or just press Enter for 1): ");
-            string input = Console.ReadLine();
+            string input = Console.ReadLine(); 
+
+
+
             if (input.Trim().ToLower() == "quit")
             {
                 break;
